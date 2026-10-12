@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @extends('layouts.app')
 @section('title', 'Login')
 
@@ -26,6 +27,36 @@
                 Log in <i class="fa-solid fa-arrow-right ml-1"></i>
             </button>
         </form>
+=======
+@extends('layouts.auth')
+
+@section('title', 'Rakz Rental - Login')
+
+@section('content')
+
+    <h1>Login to your account</h1>
+
+    <x-alerts />
+
+    <form method="POST" action="{{ route('login.submit') }}">
+
+        @csrf
+
+        <div class="field">
+
+            <label for="email" class="label">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                value="{{ old('email') }}"
+                required
+            >
+>>>>>>> Stashed changes
 
         <p class="text-sm text-gray-400 mt-6 text-center">
             New to Rakz Rental? <a href="{{ route('register') }}" class="rz-primary font-medium" data-testid="link-register">Create an account</a>
@@ -36,6 +67,39 @@
             <p>Admin: admin@rakzrental.com / admin123</p>
             <p>Customer: customer@rakzrental.com / customer123</p>
         </div>
+<<<<<<< Updated upstream
     </div>
 </div>
+=======
+
+        <div class="field">
+
+            <label for="password" class="label">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+                required
+            >
+
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+            Login
+        </button>
+
+    </form>
+
+    <p class="auth-switch">
+        Don't have an account?
+        <a href="{{ route('register') }}">
+            Sign Up
+        </a>
+    </p>
+
+>>>>>>> Stashed changes
 @endsection

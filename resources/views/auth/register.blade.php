@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @extends('layouts.app')
 @section('title', 'Register')
 
@@ -52,4 +53,119 @@
         </p>
     </div>
 </div>
+=======
+@extends('layouts.auth')
+
+@section('title', 'Rakz Rental - Sign Up')
+
+@section('content')
+
+    <h1>Create your customer account</h1>
+
+    <x-alerts />
+
+    <form method="POST" action="{{ route('register.submit') }}">
+
+        @csrf
+
+        <div class="field">
+
+            <label for="name" class="label">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                class="input"
+                value="{{ old('name') }}"
+                placeholder="Enter your full name"
+                required
+            >
+
+        </div>
+
+        <div class="field">
+
+            <label for="email" class="label">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                class="input"
+                value="{{ old('email') }}"
+                placeholder="Enter your email address"
+                required
+            >
+
+        </div>
+
+        <div class="field" style="margin-bottom: 8px;">
+
+            <label for="password" class="label">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                class="input"
+                placeholder="Create a strong password"
+                required
+            >
+
+        </div>
+
+        <div class="help-box">
+
+            <div class="help-box-title">
+                Password must contain:
+            </div>
+
+            <ul>
+                <li>At least 8 characters</li>
+                <li>At least one uppercase letter</li>
+                <li>At least one lowercase letter</li>
+                <li>At least one number</li>
+                <li>At least one special character</li>
+            </ul>
+
+        </div>
+
+        <div class="field">
+
+            <label for="password_confirmation" class="label">
+                Confirm Password
+            </label>
+
+            <input
+                type="password"
+                id="password_confirmation"
+                name="password_confirmation"
+                class="input"
+                placeholder="Confirm your password"
+                required
+            >
+
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+            Create Account
+        </button>
+
+    </form>
+
+    <p class="auth-switch">
+        Already have an account?
+        <a href="{{ route('login') }}">
+            Login
+        </a>
+    </p>
+
+>>>>>>> Stashed changes
 @endsection
